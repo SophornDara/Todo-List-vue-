@@ -49,11 +49,14 @@ When the app first loads, it immediately checks for a previously saved list.
 JavaScript
 
 // --- 1. LOAD TASKS ---
+```sh
 const savedTodos = JSON.parse(localStorage.getItem('cadt-todos'));
 
 const todos = ref(savedTodos || [
     // ... default tasks if nothing is saved
 ]);
+
+```
 It attempts to get the JSON string from localStorage with the key 'cadt-todos'.
 JSON.parse() converts the string back into a JavaScript array.
 The todos state is initialized with the savedTodos or a default array if no saved data exists.
