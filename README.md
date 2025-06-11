@@ -66,11 +66,14 @@ A watch function monitors the todos array for any changes and immediately saves 
 JavaScript
 
 // --- 2. WATCH FOR CHANGES & SAVE TASKS ---
+```sh
 watch(todos, (newList) => {
     localStorage.setItem('cadt-todos', JSON.stringify(newList));
 }, {
     deep: true
 });
+
+```
 JSON.stringify() converts the array into a string for storage.
 The { deep: true } option is crucial; it ensures the watcher detects changes made inside the task objects (like toggling completed or changing task text), not just additions or deletions to the array.
 State and Functions
@@ -100,13 +103,14 @@ Application Initialization
 Finally, the logic is connected to the DOM.
 
 JavaScript
-
+```sh
 return {
     todos,
     task,
     addToList,
     // ... all other functions
 };
+```
 The setup function returns an object containing all the state and functions that need to be accessible from the index.html template.
 
 JavaScript
